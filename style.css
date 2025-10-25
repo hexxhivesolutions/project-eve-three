@@ -1,0 +1,275 @@
+/* ============================================================
+   FILE: style_CerBrOrBeiMus.css
+   PROJECT: HexHive Solutions
+   PURPOSE: Defines global styles, layout structure, 
+            and color theme using Cerulean, Muted Brown, 
+            Burnt Orange, Beige, and Mustard Yellow palette.
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION: ROOT COLOR VARIABLES
+   Purpose: Centralized color management for easy theme updates.
+   ============================================================ */
+:root {
+  /* === Brand & Accent Colors === */
+  --color-cerulean: #00AEEF;        /* Brand accent / primary (buttons, highlights) */
+  --color-muted-brown: #7B5E57;     /* Secondary / headers, nav background */
+  --color-burnt-orange: #CC5500;    /* Call-to-action / hover accents */
+  --color-beige: #F5F5DC;           /* Main background / neutral tone */
+  --color-mustard-yellow: #E1AD01;  /* Secondary accent / warm highlight */
+
+  /* === Text Colors === */
+  --color-text-primary: #2b2b2b;    /* Default text color (dark) */
+  --color-text-light: #ffffff;      /* Light text for dark sections */
+
+  /* === UI Utilities === */
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.3s ease;
+}
+
+
+/* ============================================================
+   SECTION: GLOBAL STYLES
+   Purpose: Base typography, spacing, and layout resets.
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-beige);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   SECTION: HEADER & NAVIGATION
+   Purpose: Displays site title and navigation links.
+   ============================================================ */
+header {
+  background-color: var(--color-muted-brown);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  position: sticky;
+  box-shadow: var(--shadow-light);
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+nav a:hover {
+  color: var(--color-mustard-yellow);
+}
+
+
+/* ============================================================
+   SECTION: HERO AREA (MODIFIED FOR ANIMATION)
+   Purpose: Main introductory section with tagline and message.
+   ============================================================ */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-beige) 60%,
+    var(--color-mustard-yellow) 100%
+  );
+  color: var(--color-text-primary);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--color-muted-brown);
+  margin-bottom: 1rem;
+  /* ADDED: Immediate animation on load */
+  animation: fadeDown 1.5s ease;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  /* ADDED: Immediate animation on load */
+  animation: fadeUp 2s ease;
+}
+
+
+/* ============================================================
+   SECTION: SCROLLABLE CARD CONTAINER
+   Purpose: Horizontal scroll section with buttons and cards.
+   ============================================================ */
+.section-title {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-muted-brown);
+  font-size: 1.8rem;
+}
+
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+/* Scrollable card wrapper */
+.scroll-section {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.scroll-section::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean design */
+}
+
+
+/* ============================================================
+   SECTION: SCROLL BUTTONS
+   Purpose: Manual navigation arrows for horizontal scroll.
+   ============================================================ */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-cerulean);
+  border: none;
+  color: var(--color-text-light);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow-light);
+  transition: background-color var(--transition-fast);
+  z-index: 2;
+}
+
+.scroll-btn:hover {
+  background-color: var(--color-burnt-orange);
+}
+
+.scroll-btn.left {
+  left: 0.5rem;
+}
+
+.scroll-btn.right {
+  right: 0.5rem;
+}
+
+
+/* ============================================================
+   SECTION: WEBSITE CARDS
+   Purpose: Visual cards representing linked websites.
+   ============================================================ */
+.card {
+  min-width: 160px;
+  background-color: var(--color-text-light);
+  color: var(--color-text-primary);
+  text-align: center;
+  border-radius: 15px;
+  padding: 1rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  border: 3px solid transparent;
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Hover effects for interactivity */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-cerulean);
+  box-shadow: 0 0 12px var(--color-burnt-orange);
+}
+
+
+/* ============================================================
+   SECTION: CARD ANIMATION (ON VIEW)
+   Purpose: Fade/slide animation triggered when card enters view.
+   ============================================================ */
+/* ADDED: Keyframes for immediate hero animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.animate {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================================
+   SECTION: FOOTER
+   Purpose: Displays company rights or additional info.
+   ============================================================ */
+footer {
+  background-color: var(--color-muted-brown);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+}

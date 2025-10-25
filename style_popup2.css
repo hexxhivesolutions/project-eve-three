@@ -1,0 +1,186 @@
+/* =========================================================
+   STYLE.CSS - HEXHIVE SOLUTIONS WEBSITE
+   Updated Color Palette: Cerulean, Goldenrod, Coral, Amber, Tangerine
+   ========================================================= */
+
+/* 🎨 Color Palette Reference */
+:root {
+  --cerulean: #007ba7;     /* Main accent - buttons, links */
+  --goldenrod: #daa520;    /* Secondary tone - highlights, hover states */
+  --coral: #ff7f50;        /* Accent color - hover, icons */
+  --amber: #ffbf00;        /* Warm yellow tone - section backgrounds */
+  --tangerine: #f28500;    /* Energetic orange - active states */
+  --light-bg: #fdfdfb;     /* Light background */
+  --text-color: #222;      /* Primary text color */
+}
+
+/* =========================================================
+   GENERAL STYLES
+   ========================================================= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* =========================================================
+   HEADER SECTION
+   ========================================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(90deg, var(--cerulean), var(--goldenrod));
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--amber);
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom right, var(--cerulean), var(--tangerine));
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SCROLLABLE CARD SECTION
+   ========================================================= */
+.section-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: var(--cerulean);
+  font-size: 1.8rem;
+}
+
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.scroll-section {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 1rem;
+  scrollbar-width: none;
+}
+
+.scroll-section::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   CARD STYLING
+   ========================================================= */
+.card {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--amber);
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+  margin-top: 1.5rem;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--cerulean);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-color: var(--coral);
+}
+
+/* =========================================================
+   SCROLL BUTTONS
+   ========================================================= */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: var(--cerulean);
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.scroll-btn:hover {
+  background: var(--tangerine);
+  transform: scale(1.1);
+}
+
+.scroll-btn.left { left: 10px; }
+.scroll-btn.right { right: 10px; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, var(--coral), var(--goldenrod));
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}

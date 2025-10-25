@@ -1,0 +1,59 @@
+const scrollContainer = document.querySelector(".scroll-section");
+const leftBtn = document.querySelector(".scroll-btn.left");
+const rightBtn = document.querySelector(".scroll-btn.right");
+
+// Manual scrolling using buttons
+rightBtn.addEventListener("click", () => {
+  scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+});
+
+leftBtn.addEventListener("click", () => {
+  scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+});
+
+// Allow mouse dragging (click + drag to scroll)
+let isDown = false;
+let startX;
+let scrollLeft;
+
+scrollContainer.addEventListener("mousedown", (e) => {
+  isDown = true;
+  scrollContainer.classList.add("active");
+  startX = e.pageX - scrollContainer.offsetLeft;
+  scrollLeft = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener("mouseleave", () => {
+  isDown = false;
+  scrollContainer.classList.remove("active");
+});
+
+scrollContainer.addEventListener("mouseup", () => {
+  isDown = false;
+  scrollContainer.classList.remove("active");
+});
+
+scrollContainer.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - scrollContainer.offsetLeft;
+  const walk = (x - startX) * 2; // scroll speed
+  scrollContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Animate cards when in view
+const cards = document.querySelectorAll(".card");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+cards.forEach((card) => observer.observe(card));

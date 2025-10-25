@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       SECTION: META & PAGE CONFIGURATION
+       Purpose: Defines document type, encoding, viewport, and links 
+                required stylesheets for responsive layout.
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HexHive Solutions</title>
+
+  <!-- External CSS stylesheet link -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       SECTION: HEADER & NAVIGATION BAR
+       Purpose: Displays the company name (logo/title) and 
+                navigation links for key site sections.
+       ============================================================ -->
+  <header>
+    <h1>HexHive</h1>
+    <nav>
+      <!-- Navigation links (can update targets or add more pages later) -->
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       SECTION: HERO / INTRODUCTION AREA
+       Purpose: Provides the main tagline and company mission statement.
+       Note: Adjust text for brand tone or include call-to-action buttons if needed.
+       ============================================================ -->
+  <section class="hero">
+    <h2>Innovate. Build. Automate.</h2>
+    <p>
+      Empowering your digital presence with modern, fast, and secure web solutions. 
+      Crafted with precision, fueled by technology.
+    </p>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION: WEBSITE GALLERY TITLE
+       Purpose: Section heading for the horizontally scrollable card list.
+       ============================================================ -->
+  <h2 class="section-title">Explore Websites</h2>
+
+
+  <!-- ============================================================
+       SECTION: SCROLLABLE CARD CONTAINER
+       Purpose: Displays clickable cards representing different websites.
+                Includes left/right buttons for horizontal scrolling.
+       ============================================================ -->
+  <section class="scroll-container">
+    
+    <!-- Left scroll button (moves scroll area to the left) -->
+    <button class="scroll-btn left">&#10094;</button>
+    
+    <!-- ============================================================
+         SUB-SECTION: SCROLL SECTION / CARD WRAPPER
+         Purpose: Contains all website cards. This section is scrollable.
+         Each card acts as a hyperlink to an external website.
+         ============================================================ -->
+    <div class="scroll-section">
+
+      <!-- =========================
+           Individual Website Cards
+           Each "a.card" includes:
+           - Website link (opens in new tab)
+           - Favicon image
+           - Website name as title
+           ========================= -->
+      <a href="https://google.com" target="_blank" class="card">
+        <img src="https://www.google.com/favicon.ico" alt="Google">
+        <h3>Google</h3>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" class="card">
+        <img src="https://www.facebook.com/favicon.ico" alt="Facebook">
+        <h3>Facebook</h3>
+      </a>
+
+      <a href="https://twitter.com" target="_blank" class="card">
+        <img src="https://abs.twimg.com/favicons/twitter.2.ico" alt="Twitter">
+        <h3>Twitter</h3>
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" class="card">
+        <img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn">
+        <h3>LinkedIn</h3>
+      </a>
+
+      <a href="https://youtube.com" target="_blank" class="card">
+        <img src="https://www.youtube.com/s/desktop/6f29806e/img/favicon.ico" alt="YouTube">
+        <h3>YouTube</h3>
+      </a>
+
+      <a href="https://github.com" target="_blank" class="card">
+        <img src="https://github.githubassets.com/favicons/favicon.png" alt="GitHub">
+        <h3>GitHub</h3>
+      </a>
+
+      <a href="https://reddit.com" target="_blank" class="card">
+        <img src="https://www.redditstatic.com/desktop2x/img/favicon/favicon-32x32.png" alt="Reddit">
+        <h3>Reddit</h3>
+      </a>
+
+      <a href="https://spotify.com" target="_blank" class="card">
+        <img src="https://www.scdn.co/i/_global/favicon.png" alt="Spotify">
+        <h3>Spotify</h3>
+      </a>
+
+      <a href="https://amazon.com" target="_blank" class="card">
+        <img src="https://www.amazon.com/favicon.ico" alt="Amazon">
+        <h3>Amazon</h3>
+      </a>
+
+      <a href="https://notion.so" target="_blank" class="card">
+        <img src="https://www.notion.so/images/favicon.ico" alt="Notion">
+        <h3>Notion</h3>
+      </a>
+
+    </div> <!-- End of .scroll-section -->
+
+    <!-- Right scroll button (moves scroll area to the right) -->
+    <button class="scroll-btn right">&#10095;</button>
+
+  </section> <!-- End of scroll-container -->
+
+
+  <!-- ============================================================
+       SECTION: FOOTER
+       Purpose: Displays copyright information.
+                You can expand this with links, contact info, or social icons.
+       ============================================================ -->
+  <footer>
+    © 2025 HexHive Solutions. All rights reserved.
+  </footer>
+
+
+  <!-- ============================================================
+       SECTION: SCRIPT IMPORTS
+       Purpose: Loads JavaScript file for scroll logic and animations.
+       Note: Keep at bottom to ensure DOM loads before script runs.
+       ============================================================ -->
+  <script src="script.js"></script>
+</body>
+</html>
